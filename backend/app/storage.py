@@ -26,7 +26,13 @@ class ImageStorage:
             content_type="image/jpeg",
         )
 
-    async def get(self, image_uuid: uuid.UUID) -> bytes:
-        response = await self._client.get_object(self._bucket, str(image_uuid))
+    async def get(self, image_uuid: uuid.UUID) -> bytes | None:
+        try:
+            response = await self._client.get_object(self._bucket, str(image_uuid))
+        except S3Error as exc:
+            if exc.code == "NoSuchKey":
+                return None
+            raise
         async with response:
             return await response.read()
+            

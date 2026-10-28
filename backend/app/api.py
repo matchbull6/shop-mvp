@@ -1,3 +1,4 @@
+import uuid
 from typing import Annotated
 
 from fastapi import (
@@ -50,9 +51,9 @@ async def create_product(
     return ProductOut.from_model(product)
 
 
-@router.get("/products/{product_id}/image")
-async def get_product_image(service: Service, product_id: int) -> Response:
-    data = await service.get_image(product_id)
+@router.get("/images/{image_uuid}")
+async def get_image(service: Service, image_uuid: uuid.UUID) -> Response:
+    data = await service.get_image(image_uuid)
     if data is None:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Изображение не найдено"

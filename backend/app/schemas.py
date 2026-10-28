@@ -13,7 +13,7 @@ class ProductOut(BaseModel):
         return cls(
             id=product.id,
             name=product.name,
-            image_url=f"/api/products/{product.id}/image",
+            image_url=f"/api/images/{product.image_uuid}",
         )
 
 

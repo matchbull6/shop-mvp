@@ -42,8 +42,5 @@ class ProductService:
         await self._storage.put(image_uuid, image)
         return await self._repo.add(name, image_uuid)
 
-    async def get_image(self, product_id: int) -> bytes | None:
-        product = await self._repo.get(product_id)
-        if product is None:
-            return None
-        return await self._storage.get(product.image_uuid)
+    async def get_image(self, image_uuid: uuid.UUID) -> bytes | None:
+        return await self._storage.get(image_uuid)

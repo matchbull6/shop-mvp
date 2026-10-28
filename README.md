@@ -25,7 +25,9 @@ cp .env.example .env
 ```
 docker compose up -d --build
 ```
-Вариативное заполенение бд и хранилища 50 записями
+Вариативно, заполнение БД и хранилища 50 случайными товарами
 ```
 docker compose run --rm seed
 ```
+<img src="docs/preview_bot.png" height="250">
+<img src="docs/preview_tma.png" height="250">
