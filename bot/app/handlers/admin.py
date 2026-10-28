@@ -21,7 +21,7 @@ FILTER_NAME = F.caption.func(str.strip).as_("name")
 FILTER_IS_ADMIN = F.from_user.id.in_(config.ADMIN_IDS)
 
 HINT = "Ответьте на это сообщение: фото товара и его название в подписи."
-HINT_TTL = 60
+HINT_TTL = 60 * 5
 RESULT_TTL = 10
 
 
