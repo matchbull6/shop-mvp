@@ -1,0 +1,10 @@
+[project]
+name = "backend"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[standard]>=0.162.0",
+    "miniopy-async>=1.23.6",
+    "psycopg[binary]>=3.3.6",
+    "sqlalchemy[asyncio]>=2.1.6",
+]

@@ -1,0 +1,21 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+[Caddyfile]
+indent_style = tab
+
+# shared
+[*.{ts,tsx,json,css,yml,py}]
+indent_style = space
+
+# frontend, docker
+[*.{ts,tsx,json,css,yml}]
+indent_size = 2
+
+# python
+[*.py]
+indent_size = 4

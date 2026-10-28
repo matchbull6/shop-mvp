@@ -1,0 +1,7 @@
+node_modules
+.next
+.vscode
+.dockerignore
+Dockerfile
+next-env.d.ts
+*.tsbuildinfo
